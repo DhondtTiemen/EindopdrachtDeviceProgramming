@@ -11,9 +11,9 @@ using Xamarin.Forms.Xaml;
 
 namespace Eindopdracht.Views
 {
-    public partial class AllSeasonsPage : ContentPage
+    public partial class SeasonPage : ContentPage
     {
-        public AllSeasonsPage()
+        public SeasonPage()
         {
             InitializeComponent();
 

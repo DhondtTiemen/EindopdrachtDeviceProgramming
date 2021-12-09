@@ -8,12 +8,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Eindopdracht.Views.SeasonPage.xaml", "Views/SeasonPage.xaml", typeof(global::Eindopdracht.Views.SeasonPage))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Eindopdracht.Views.SeasonsPage.xaml", "Views/SeasonsPage.xaml", typeof(global::Eindopdracht.Views.SeasonPage))]
 
 namespace Eindopdracht.Views {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\SeasonPage.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\SeasonsPage.xaml")]
     public partial class SeasonPage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]

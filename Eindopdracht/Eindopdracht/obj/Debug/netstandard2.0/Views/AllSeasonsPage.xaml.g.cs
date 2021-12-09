@@ -8,20 +8,20 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Eindopdracht.Views.AllSeasonsPage.xaml", "Views/AllSeasonsPage.xaml", typeof(global::Eindopdracht.Views.SeasonPage))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Eindopdracht.Views.AllSeasonsPage.xaml", "Views/AllSeasonsPage.xaml", typeof(global::Eindopdracht.Views.AllSeasonsPage))]
 
 namespace Eindopdracht.Views {
     
     
     [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\AllSeasonsPage.xaml")]
-    public partial class SeasonPage : global::Xamarin.Forms.ContentPage {
+    public partial class AllSeasonsPage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Xamarin.Forms.ListView lvwSeasons;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
-            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(SeasonPage));
+            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(AllSeasonsPage));
             lvwSeasons = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ListView>(this, "lvwSeasons");
         }
     }
