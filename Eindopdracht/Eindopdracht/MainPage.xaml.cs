@@ -16,26 +16,21 @@ namespace Eindopdracht
         public MainPage()
         {
             InitializeComponent();
-
-            //Seizoenen weergeven
-            ShowSeasons();
         }
 
-        private async Task ShowSeasons()
+        private void frameSeasons_Tapped(object sender, EventArgs e)
         {
-            //Seizoenen verkrijgen
-            RootObject seizoenen = await FormulaRepository.GetSeasonsAsync();
-            lvwSeasons.ItemsSource = seizoenen.MRData.SeasonTable.Seasons;
+            Navigation.PushAsync(new AllSeasonsPage());
         }
 
-        private void lvwSeasons_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        private void frameCircuits_Tapped(object sender, EventArgs e)
         {
-            Season season = lvwSeasons.SelectedItem as Season;
+            Navigation.PushAsync(new AllCircuitsPage());
+        }
 
-            if (season != null)
-            {
-                Navigation.PushAsync(new CircuitPage(season));
-            }
+        private void frameDrivers_Tapped(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new AllDriversPage());
         }
     }
 }

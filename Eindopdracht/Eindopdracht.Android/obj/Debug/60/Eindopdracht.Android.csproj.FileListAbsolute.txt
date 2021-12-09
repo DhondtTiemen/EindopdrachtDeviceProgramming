@@ -1,0 +1,3 @@
+C:\Users\Tiemen\Desktop\Device Programming\EindopdrachtDeviceProgramming\Eindopdracht\Eindopdracht.Android\obj\Debug\60\MonoAndroid,Version=v6.0.AssemblyAttributes.cs
+C:\Users\Tiemen\Desktop\Device Programming\EindopdrachtDeviceProgramming\Eindopdracht\Eindopdracht.Android\obj\Debug\60\build.props
+C:\Users\Tiemen\Desktop\Device Programming\EindopdrachtDeviceProgramming\Eindopdracht\Eindopdracht.Android\obj\Debug\60\adb.props

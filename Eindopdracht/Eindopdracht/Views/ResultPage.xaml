@@ -13,7 +13,7 @@
                                     <ColumnDefinition Width="45" />
                                     <ColumnDefinition />
                                 </Grid.ColumnDefinitions>
-                                <Label Grid.Column="1" Text="{Binding Result.Driver.givenName}" TextColor="Red" HorizontalOptions="Start" VerticalOptions="Center" />
+                                <Label Grid.Column="1" Text="{Binding Driver.givenName}" TextColor="Red" HorizontalOptions="Start" VerticalOptions="Center" />
                             </Grid>
                         </ViewCell>
                     </DataTemplate>

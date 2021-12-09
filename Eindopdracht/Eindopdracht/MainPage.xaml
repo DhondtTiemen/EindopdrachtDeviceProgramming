@@ -3,22 +3,39 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Eindopdracht.MainPage">
 
-    <StackLayout>
-        <ListView x:Name="lvwSeasons" SeparatorColor="White" ItemSelected="lvwSeasons_ItemSelected">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="45" />
-                                <ColumnDefinition />
-                            </Grid.ColumnDefinitions>
-                            <Label Grid.Column="1" Text="{Binding season}" TextColor="Red" HorizontalOptions="Start" VerticalOptions="Center" />
-                        </Grid>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+    <!--<ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Frame HeightRequest="50" WidthRequest="50" BackgroundColor="red" Grid.Column="0" Grid.Row="0"></Frame>
+        </Grid>
+    </ContentPage.Content>-->
+
+
+    <StackLayout VerticalOptions="Fill" Padding="24">
+        <Frame VerticalOptions="StartAndExpand" HeightRequest="200">
+            <Label Text="Seasons" TextColor="Red" HorizontalOptions="Start" VerticalOptions="Center"></Label>
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Tapped="frameSeasons_Tapped"></TapGestureRecognizer>
+            </Frame.GestureRecognizers>
+        </Frame>
+        <Frame VerticalOptions="StartAndExpand" HeightRequest="200">
+            <Label Text="Circuits" TextColor="Red" HorizontalOptions="Start" VerticalOptions="Center"></Label>
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Tapped="frameCircuits_Tapped"></TapGestureRecognizer>
+            </Frame.GestureRecognizers>
+        </Frame>
+        <Frame VerticalOptions="StartAndExpand" HeightRequest="200">
+            <Label Text="Drivers" TextColor="Red" HorizontalOptions="Start" VerticalOptions="Center"></Label>
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Tapped="frameDrivers_Tapped"></TapGestureRecognizer>
+            </Frame.GestureRecognizers>
+        </Frame>
     </StackLayout>
+    
 
 </ContentPage>
