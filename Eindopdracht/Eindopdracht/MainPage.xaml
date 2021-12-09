@@ -4,7 +4,7 @@
              x:Class="Eindopdracht.MainPage">
 
     <StackLayout>
-        <ListView x:Name="lvwSeasons" SeparatorColor="White" ItemSelected="lvwSeasons_ItemSelected">
+        <ListView x:Name="lvwSeasons" SeparatorColor="White">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
