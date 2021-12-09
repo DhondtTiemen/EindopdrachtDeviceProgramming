@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Eindopdracht.Views.AllSeasonsPage">
+             x:Class="Eindopdracht.Views.AllSeasonsPage" NavigationPage.HasNavigationBar="True" Title="Seasons">
     <ContentPage.Content>
         <StackLayout>
             <ListView x:Name="lvwSeasons" SeparatorColor="White" ItemSelected="lvwSeasons_ItemSelected">
@@ -10,10 +10,10 @@
                         <ViewCell>
                             <Grid>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="45" />
+                                    <ColumnDefinition Width="16"/>
                                     <ColumnDefinition />
                                 </Grid.ColumnDefinitions>
-                                <Label Grid.Column="1" Text="{Binding season}" TextColor="Red" HorizontalOptions="Start" VerticalOptions="Center" />
+                                <Label Grid.Column="1" Text="{Binding season}" TextColor="Red" FontSize="16" HorizontalOptions="Start" VerticalOptions="Center"/>
                             </Grid>
                         </ViewCell>
                     </DataTemplate>

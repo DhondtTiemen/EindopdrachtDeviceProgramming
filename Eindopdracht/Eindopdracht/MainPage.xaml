@@ -1,23 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Eindopdracht.MainPage">
+             x:Class="Eindopdracht.MainPage" Title="F1-Stats">
 
     <StackLayout VerticalOptions="Fill" Padding="24">
         <Frame VerticalOptions="StartAndExpand" HeightRequest="200">
-            <Label Text="Seasons" TextColor="Red" HorizontalOptions="Start" VerticalOptions="Center"></Label>
+            <Label Text="Seasons" FontSize="16" TextColor="Red" HorizontalOptions="Start" VerticalOptions="Center"></Label>
             <Frame.GestureRecognizers>
                 <TapGestureRecognizer Tapped="frameSeasons_Tapped"></TapGestureRecognizer>
             </Frame.GestureRecognizers>
         </Frame>
         <Frame VerticalOptions="StartAndExpand" HeightRequest="200">
-            <Label Text="Circuits" TextColor="Red" HorizontalOptions="Start" VerticalOptions="Center"></Label>
+            <Label Text="Circuits" FontSize="16" TextColor="Red" HorizontalOptions="Start" VerticalOptions="Center"></Label>
             <Frame.GestureRecognizers>
                 <TapGestureRecognizer Tapped="frameCircuits_Tapped"></TapGestureRecognizer>
             </Frame.GestureRecognizers>
         </Frame>
         <Frame VerticalOptions="StartAndExpand" HeightRequest="200">
-            <Label Text="Drivers" TextColor="Red" HorizontalOptions="Start" VerticalOptions="Center"></Label>
+            <Label Text="Drivers" FontSize="16" TextColor="Red" HorizontalOptions="Start" VerticalOptions="Center"></Label>
             <Frame.GestureRecognizers>
                 <TapGestureRecognizer Tapped="frameDrivers_Tapped"></TapGestureRecognizer>
             </Frame.GestureRecognizers>

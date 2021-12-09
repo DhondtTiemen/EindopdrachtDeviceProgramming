@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Eindopdracht.Views.CircuitPage">
+             x:Class="Eindopdracht.Views.CircuitPage" NavigationPage.HasNavigationBar="True" Title="Circuits">
     <ContentPage.Content>
         <StackLayout>
             <ListView x:Name="lvwCircuits" ItemSelected="lvwCircuits_ItemSelected">
@@ -10,10 +10,11 @@
                         <ViewCell>
                             <Grid>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="45" />
-                                    <ColumnDefinition />
+                                    <ColumnDefinition Width="16"/>
+                                    <ColumnDefinition/>
                                 </Grid.ColumnDefinitions>
-                                <Label Grid.Column="1" Text="{Binding Circuit.circuitName}" TextColor="Red" HorizontalOptions="Start" VerticalOptions="Center" />
+                                <Label Grid.Column="1" Text="{Binding Circuit.circuitName}" TextColor="Red" HorizontalOptions="Start" VerticalOptions="Center"/>
+                                <Label Grid.Column="2" Text="{Binding date}" TextColor="Gray" HorizontalOptions="End" VerticalOptions="Center" Padding="0, 0, 16, 0"/>
                             </Grid>
                         </ViewCell>
                     </DataTemplate>

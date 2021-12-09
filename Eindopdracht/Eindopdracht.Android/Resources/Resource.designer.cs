@@ -3824,8 +3824,6 @@ namespace Eindopdracht.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ViewBackgroundHelper_android_background = global::Eindopdracht.Droid.Resource.Styleable.ViewBackgroundHelper_android_background;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ViewBackgroundHelper_backgroundTint = global::Eindopdracht.Droid.Resource.Styleable.ViewBackgroundHelper_backgroundTint;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ViewBackgroundHelper_backgroundTintMode = global::Eindopdracht.Droid.Resource.Styleable.ViewBackgroundHelper_backgroundTintMode;
-			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ViewPager2 = global::Eindopdracht.Droid.Resource.Styleable.ViewPager2;
-			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ViewPager2_android_orientation = global::Eindopdracht.Droid.Resource.Styleable.ViewPager2_android_orientation;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ViewStubCompat = global::Eindopdracht.Droid.Resource.Styleable.ViewStubCompat;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ViewStubCompat_android_id = global::Eindopdracht.Droid.Resource.Styleable.ViewStubCompat_android_id;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ViewStubCompat_android_inflatedId = global::Eindopdracht.Droid.Resource.Styleable.ViewStubCompat_android_inflatedId;
@@ -7449,8 +7447,6 @@ namespace Eindopdracht.Droid
 			global::Xamarin.Forms.Platform.Resource.Styleable.ViewBackgroundHelper_android_background = global::Eindopdracht.Droid.Resource.Styleable.ViewBackgroundHelper_android_background;
 			global::Xamarin.Forms.Platform.Resource.Styleable.ViewBackgroundHelper_backgroundTint = global::Eindopdracht.Droid.Resource.Styleable.ViewBackgroundHelper_backgroundTint;
 			global::Xamarin.Forms.Platform.Resource.Styleable.ViewBackgroundHelper_backgroundTintMode = global::Eindopdracht.Droid.Resource.Styleable.ViewBackgroundHelper_backgroundTintMode;
-			global::Xamarin.Forms.Platform.Resource.Styleable.ViewPager2 = global::Eindopdracht.Droid.Resource.Styleable.ViewPager2;
-			global::Xamarin.Forms.Platform.Resource.Styleable.ViewPager2_android_orientation = global::Eindopdracht.Droid.Resource.Styleable.ViewPager2_android_orientation;
 			global::Xamarin.Forms.Platform.Resource.Styleable.ViewStubCompat = global::Eindopdracht.Droid.Resource.Styleable.ViewStubCompat;
 			global::Xamarin.Forms.Platform.Resource.Styleable.ViewStubCompat_android_id = global::Eindopdracht.Droid.Resource.Styleable.ViewStubCompat_android_id;
 			global::Xamarin.Forms.Platform.Resource.Styleable.ViewStubCompat_android_inflatedId = global::Eindopdracht.Droid.Resource.Styleable.ViewStubCompat_android_inflatedId;
@@ -19430,13 +19426,6 @@ namespace Eindopdracht.Droid
 			
 			// aapt resource value: 2
 			public const int ViewBackgroundHelper_backgroundTintMode = 2;
-			
-			// aapt resource value: { 0x10100C4 }
-			public static int[] ViewPager2 = new int[] {
-					16842948};
-			
-			// aapt resource value: 0
-			public const int ViewPager2_android_orientation = 0;
 			
 			// aapt resource value: { 0x10100D0,0x10100F2,0x10100F3 }
 			public static int[] ViewStubCompat = new int[] {

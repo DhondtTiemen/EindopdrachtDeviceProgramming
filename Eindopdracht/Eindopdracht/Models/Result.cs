@@ -11,11 +11,11 @@ namespace Eindopdracht.Models
         public string positionText { get; set; }
         public string points { get; set; }
         public Driver Driver { get; set; }
-        //public Constructor Constructor { get; set; }
+        public Constructor Constructor { get; set; }
         public string grid { get; set; }
         public string laps { get; set; }
         public string status { get; set; }
-        //public Time Time { get; set; }
+        public Time Time { get; set; }
 
         //Methods, ToString()
         public override string ToString()
