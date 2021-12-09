@@ -46,5 +46,35 @@ namespace Eindopdracht.Repositories
                 throw ex;
             }
         }
+
+
+        //Circuits per seizoen ophalen
+        public static async Task<RootObject> GetCircuitsBySeason(string seizoen)
+        {
+            try
+            {
+                using (HttpClient client = GetClient())
+                {
+
+                    //URL toevoegen
+                    string url = $"{_URL}/{seizoen}.json";
+
+                    //API opvragen en resultaten bijhouden in JSON
+                    string json = await client.GetStringAsync(url);
+                    if (json != null)
+                    {
+                        return JsonConvert.DeserializeObject<RootObject>(json);
+                    }
+                    else
+                    {
+                        return null;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

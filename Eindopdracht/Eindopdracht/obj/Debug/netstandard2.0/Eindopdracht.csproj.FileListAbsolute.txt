@@ -1,4 +1,3 @@
-C:\Users\Tiemen\Desktop\Device Programming\EindopdrachtDeviceProgramming\Eindopdracht\Eindopdracht\obj\Debug\netstandard2.0\Eindopdracht.csproj.AssemblyReference.cache
 C:\Users\Tiemen\Desktop\Device Programming\EindopdrachtDeviceProgramming\Eindopdracht\Eindopdracht\obj\Debug\netstandard2.0\Eindopdracht.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Tiemen\Desktop\Device Programming\EindopdrachtDeviceProgramming\Eindopdracht\Eindopdracht\obj\Debug\netstandard2.0\App.xaml.g.cs
 C:\Users\Tiemen\Desktop\Device Programming\EindopdrachtDeviceProgramming\Eindopdracht\Eindopdracht\obj\Debug\netstandard2.0\MainPage.xaml.g.cs

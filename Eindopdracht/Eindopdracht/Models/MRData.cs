@@ -13,5 +13,7 @@ namespace Eindopdracht.Models
         public string offset { get; set; }
         public string total { get; set; }
         public SeasonTable SeasonTable { get; set; }
+        public CircuitTable CircuitTable { get; set; }
+        public RaceTable RaceTable { get; set; }
     }
 }

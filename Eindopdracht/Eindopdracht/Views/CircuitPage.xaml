@@ -4,7 +4,7 @@
              x:Class="Eindopdracht.Views.CircuitPage">
     <ContentPage.Content>
         <StackLayout>
-            <ListView x:Name="lvwCircuits">
+            <ListView x:Name="lvwCircuits" ItemSelected="lvwCircuits_ItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -13,7 +13,7 @@
                                     <ColumnDefinition Width="45" />
                                     <ColumnDefinition />
                                 </Grid.ColumnDefinitions>
-                                <Label Grid.Column="1" Text="Circuit" TextColor="Red" HorizontalOptions="Start" VerticalOptions="Center" />
+                                <Label Grid.Column="1" Text="{Binding Race.Circuit.circuitName}" TextColor="Red" HorizontalOptions="Start" VerticalOptions="Center" />
                             </Grid>
                         </ViewCell>
                     </DataTemplate>

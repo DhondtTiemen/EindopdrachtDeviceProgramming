@@ -1,4 +1,5 @@
 ﻿using Eindopdracht.Models;
+using Eindopdracht.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +28,9 @@ namespace Eindopdracht.Views
 
         private async Task showCircuits()
         {
+            //Circuits opvragen
+            RootObject circuits = await FormulaRepository.GetCircuitsBySeason(seizoenJaar.season);
+            lvwCircuits.ItemsSource = circuits.MRData.RaceTable.Races;
         }
     }
 }
