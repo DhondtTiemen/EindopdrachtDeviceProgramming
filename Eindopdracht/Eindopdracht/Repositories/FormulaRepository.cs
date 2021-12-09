@@ -122,5 +122,27 @@ namespace Eindopdracht.Repositories
                 }
             }
         }
+
+        //Drivers ophalen
+        public static async Task<RootObject> GetDriversAsync()
+        {
+            using (HttpClient client = GetClient())
+            {
+
+                //URL toevoegen
+                string url = $"{_URL}/drivers.json";
+
+                //API opvragen en resultaten bijhouden in JSON
+                string json = await client.GetStringAsync(url);
+                if (json != null)
+                {
+                    return JsonConvert.DeserializeObject<RootObject>(json);
+                }
+                else
+                {
+                    return null;
+                }
+            }
+        }
     }
 }

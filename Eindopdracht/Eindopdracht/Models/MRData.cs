@@ -15,5 +15,6 @@ namespace Eindopdracht.Models
         public SeasonTable SeasonTable { get; set; }
         public CircuitTable CircuitTable { get; set; }
         public RaceTable RaceTable { get; set; }
+        public DriverTable DriverTable { get; set; }
     }
 }
