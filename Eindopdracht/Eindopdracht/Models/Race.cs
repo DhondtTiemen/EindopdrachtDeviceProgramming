@@ -12,6 +12,7 @@ namespace Eindopdracht.Models
         public string raceName { get; set; }
         public Circuit Circuit { get; set; }
         public string date { get; set; }
+        public Result[] Results { get; set; }
 
         //Methods, ToString()
         public override string ToString()

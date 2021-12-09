@@ -76,5 +76,29 @@ namespace Eindopdracht.Repositories
                 throw ex;
             }
         }
+
+
+        //Resultaat per ronde per seizoen ophalen
+        //Ophalen resultaten
+        public static async Task<RootObject> GetResultsByRoundBySeason(string seizoen, string round)
+        {
+            using (HttpClient client = GetClient())
+            {
+
+                //URL toevoegen
+                string url = $"{_URL}/{seizoen}/{round}/results.json";
+
+                //API opvragen en resultaten bijhouden in JSON
+                string json = await client.GetStringAsync(url);
+                if (json != null)
+                {
+                    return JsonConvert.DeserializeObject<RootObject>(json);
+                }
+                else
+                {
+                    return null;
+                }
+            }
+        }
     }
 }

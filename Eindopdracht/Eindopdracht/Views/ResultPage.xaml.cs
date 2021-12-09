@@ -1,4 +1,5 @@
 ﻿using Eindopdracht.Models;
+using Eindopdracht.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,9 +28,11 @@ namespace Eindopdracht.Views
             showResults();
         }
 
-        private void showResults()
+        private async Task showResults()
         {
             //Resultaten opvragen
+            RootObject resultaat = await FormulaRepository.GetResultsByRoundBySeason(seizoensJaar.season, seizoensRonde.round);
+            lvwResults.ItemsSource = resultaat.MRData.RaceTable.Races[Convert.ToInt32(seizoensRonde.round) - 1].Results;
         }
     }
 }
