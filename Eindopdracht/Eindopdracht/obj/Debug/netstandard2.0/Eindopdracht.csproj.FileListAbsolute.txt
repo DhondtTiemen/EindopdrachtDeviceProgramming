@@ -13,3 +13,4 @@ C:\Users\Tiemen\Desktop\Device Programming\EindopdrachtDeviceProgramming\Eindopd
 C:\Users\Tiemen\Desktop\Device Programming\EindopdrachtDeviceProgramming\Eindopdracht\Eindopdracht\bin\Debug\netstandard2.0\ref\Eindopdracht.dll
 C:\Users\Tiemen\Desktop\Device Programming\EindopdrachtDeviceProgramming\Eindopdracht\Eindopdracht\bin\Debug\netstandard2.0\Eindopdracht.pdb
 C:\Users\Tiemen\Desktop\Device Programming\EindopdrachtDeviceProgramming\Eindopdracht\Eindopdracht\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\Tiemen\Desktop\Device Programming\EindopdrachtDeviceProgramming\Eindopdracht\Eindopdracht\obj\Debug\netstandard2.0\Views\CircuitPage.xaml.g.cs
