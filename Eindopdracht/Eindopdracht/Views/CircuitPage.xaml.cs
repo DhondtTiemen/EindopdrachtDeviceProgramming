@@ -32,5 +32,15 @@ namespace Eindopdracht.Views
             RootObject circuits = await FormulaRepository.GetCircuitsBySeason(seizoenJaar.season);
             lvwCircuits.ItemsSource = circuits.MRData.RaceTable.Races;
         }
+
+        private void lvwCircuits_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            Race race = lvwCircuits.SelectedItem as Race;
+
+            if (race != null)
+            {
+                Navigation.PushAsync(new ResultPage(seizoenJaar, race));
+            }
+        }
     }
 }
