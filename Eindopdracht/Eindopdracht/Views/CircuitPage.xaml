@@ -15,6 +15,7 @@
                                 </Grid.ColumnDefinitions>
                                 <Label Grid.Column="1" Text="{Binding Circuit.circuitName}" TextColor="Red" HorizontalOptions="Start" VerticalOptions="Center"/>
                                 <Label Grid.Column="2" Text="{Binding date}" TextColor="Gray" HorizontalOptions="End" VerticalOptions="Center" Padding="0, 0, 16, 0"/>
+                                <Label Grid.Column="3" Text="{Binding time}" TextColor="Gray" HorizontalOptions="End" VerticalOptions="Center" Padding="0, 0, 16, 0"/>
                             </Grid>
                         </ViewCell>
                     </DataTemplate>

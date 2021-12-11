@@ -23141,6 +23141,37 @@ public final class R {
      */
     public static final int ViewBackgroundHelper_backgroundTintMode=2;
     /**
+     * Attributes that can be used with a ViewPager2.
+     * <p>Includes the following attributes:</p>
+     * <table>
+     * <colgroup align="left" />
+     * <colgroup align="left" />
+     * <tr><th>Attribute</th><th>Description</th></tr>
+     * <tr><td><code>{@link #ViewPager2_android_orientation android:orientation}</code></td><td></td></tr>
+     * </table>
+     * @see #ViewPager2_android_orientation
+     */
+    public static final int[] ViewPager2={
+      0x010100c4
+    };
+    /**
+     * <p>This symbol is the offset where the {@link android.R.attr#orientation}
+     * attribute's value can be found in the {@link #ViewPager2} array.
+     *
+     * <p>Must be one of the following constant values.</p>
+     * <table>
+     * <colgroup align="left" />
+     * <colgroup align="left" />
+     * <colgroup align="left" />
+     * <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+     * <tr><td>horizontal</td><td>0</td><td></td></tr>
+     * <tr><td>vertical</td><td>1</td><td></td></tr>
+     * </table>
+     *
+     * @attr name android:orientation
+     */
+    public static final int ViewPager2_android_orientation=0;
+    /**
      * Attributes that can be used with a ViewStubCompat.
      * <p>Includes the following attributes:</p>
      * <table>

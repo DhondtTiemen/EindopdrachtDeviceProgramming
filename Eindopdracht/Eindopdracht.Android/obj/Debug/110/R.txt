@@ -3636,6 +3636,8 @@ int[] styleable ViewBackgroundHelper { 0x010100d4, 0x7f03003d, 0x7f03003e }
 int styleable ViewBackgroundHelper_android_background 0
 int styleable ViewBackgroundHelper_backgroundTint 1
 int styleable ViewBackgroundHelper_backgroundTintMode 2
+int[] styleable ViewPager2 { 0x010100c4 }
+int styleable ViewPager2_android_orientation 0
 int[] styleable ViewStubCompat { 0x010100d0, 0x010100f2, 0x010100f3 }
 int styleable ViewStubCompat_android_id 0
 int styleable ViewStubCompat_android_layout 1

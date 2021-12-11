@@ -20,7 +20,7 @@ namespace Eindopdracht.Models
         //Methods, ToString()
         public override string ToString()
         {
-            return this.number + ": " + this.Driver.givenName;
+            return this.position + ": " + this.Driver.familyName + " (" + Constructor.name + ") ";
         }
     }
 }

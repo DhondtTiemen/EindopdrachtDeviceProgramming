@@ -13,9 +13,10 @@
                                     <ColumnDefinition Width="16"/>
                                     <ColumnDefinition />
                                 </Grid.ColumnDefinitions>
-                                <Label Grid.Column="1" Text="{Binding Driver.familyName}" TextColor="Red" HorizontalOptions="Start" VerticalOptions="Center" />
-                                <Label Grid.Column="2" Text="{Binding Constructor.name}" TextColor="Gray" HorizontalOptions="Start" VerticalOptions="Center" Padding="0, 0, 16, 0"/>
-                                <Label Grid.Column="3" Text="{Binding Time.time}" TextColor="Gray" HorizontalOptions="End" VerticalOptions="Center" Padding="0, 0, 16, 0"/>
+                                <Label Grid.Column="1" Text="{Binding position}" TextColor="Red" HorizontalOptions="Start" VerticalOptions="Center"/>
+                                <Label Grid.Column="2" Text="{Binding Driver.familyName}" TextColor="Red" HorizontalOptions="Start" VerticalOptions="Center" Padding="-56, 0, 0, 0"/>
+                                <Label Grid.Column="3" Text="{Binding Constructor.name}" TextColor="Gray" HorizontalOptions="Start" VerticalOptions="Center" Padding="-24, 0, 16, 0"/>
+                                <Label Grid.Column="4" Text="{Binding Time.time}" TextColor="Gray" HorizontalOptions="End" VerticalOptions="Center" Padding="0, 0, 16, 0"/>
                             </Grid>
                         </ViewCell>
                     </DataTemplate>

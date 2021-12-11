@@ -3525,6 +3525,8 @@ public final class R {
 		public static final int ViewBackgroundHelper_android_background = 0;
 		public static final int ViewBackgroundHelper_backgroundTint = 1;
 		public static final int ViewBackgroundHelper_backgroundTintMode = 2;
+		public static final int[] ViewPager2 = new int[] { 0x010100c4 };
+		public static final int ViewPager2_android_orientation = 0;
 		public static final int[] ViewStubCompat = new int[] { 0x010100d0, 0x010100f2, 0x010100f3 };
 		public static final int ViewStubCompat_android_id = 0;
 		public static final int ViewStubCompat_android_inflatedId = 2;

@@ -27,7 +27,7 @@ namespace Eindopdracht.Repositories
                 using (HttpClient client = GetClient())
                 {
                     //URL toevoegen
-                    string url = $"{_URL}/seasons.json";
+                    string url = $"{_URL}/seasons.json?limit=100";
 
                     //API opvragen en resultaten bijhouden in JSON
                     string json = await client.GetStringAsync(url);
@@ -108,7 +108,7 @@ namespace Eindopdracht.Repositories
             {
 
                 //URL toevoegen
-                string url = $"{_URL}/circuits.json";
+                string url = $"{_URL}/circuits.json?limit=100";
 
                 //API opvragen en resultaten bijhouden in JSON
                 string json = await client.GetStringAsync(url);
@@ -130,7 +130,7 @@ namespace Eindopdracht.Repositories
             {
 
                 //URL toevoegen
-                string url = $"{_URL}/drivers.json";
+                string url = $"{_URL}/drivers.json?limit=853";
 
                 //API opvragen en resultaten bijhouden in JSON
                 string json = await client.GetStringAsync(url);

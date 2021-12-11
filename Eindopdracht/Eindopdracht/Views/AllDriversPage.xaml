@@ -14,7 +14,7 @@
                                     <ColumnDefinition />
                                 </Grid.ColumnDefinitions>
                                 <Label Grid.Column="1" Text="{Binding familyName}" TextColor="Red" FontSize="16" HorizontalOptions="Start" VerticalOptions="Center"/>
-                                <Label Grid.Column="2" Text="{Binding nationality}" TextColor="Red" FontSize="16" HorizontalOptions="End" VerticalOptions="Center" Padding="0, 0, 16, 0"/>
+                                <Label Grid.Column="2" Text="{Binding nationality}" TextColor="Gray" FontSize="16" HorizontalOptions="End" VerticalOptions="Center" Padding="0, 0, 16, 0"/>
                             </Grid>
                         </ViewCell>
                     </DataTemplate>

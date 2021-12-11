@@ -12,7 +12,22 @@ namespace Eindopdracht.Models
         public string raceName { get; set; }
         public Circuit Circuit { get; set; }
         public string date { get; set; }
+        public string time { get; set; }
         public Result[] Results { get; set; }
+
+        //Calculated Property
+        //public string localTime
+        //{
+        //    get
+        //    {
+        //        time = this.time;
+        //        string timeZString = time.Substring(6);
+        //        DateTime timeZTime = Convert.ToDateTime(timeZString);
+        //        DateTime localTime = Convert.ToDateTime(timeZTime).ToLocalTime();
+        //        string localTimeString = Convert.ToString(localTime);
+        //        return localTimeString;
+        //    }
+        //}
 
         //Methods, ToString()
         public override string ToString()
