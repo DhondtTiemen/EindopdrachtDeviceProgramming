@@ -16,18 +16,19 @@ namespace Eindopdracht.Models
         public Result[] Results { get; set; }
 
         //Calculated Property
-        //public string localTime
-        //{
-        //    get
-        //    {
-        //        time = this.time;
-        //        string timeZString = time.Substring(6);
-        //        DateTime timeZTime = Convert.ToDateTime(timeZString);
-        //        DateTime localTime = Convert.ToDateTime(timeZTime).ToLocalTime();
-        //        string localTimeString = Convert.ToString(localTime);
-        //        return localTimeString;
-        //    }
-        //}
+        public string localTime
+        {
+            get
+            {
+                time = this.time;
+                string timeZString = time.Substring(0, 8);
+                DateTime timetime = DateTime.Parse(timeZString);
+                DateTime timeztime = Convert.ToDateTime(timetime).ToUniversalTime();
+                DateTime localtime = Convert.ToDateTime(timeztime).ToLocalTime();
+                string localtimestring = Convert.ToString(localtime);
+                return timeZString;
+            }
+        }
 
         //Methods, ToString()
         public override string ToString()
