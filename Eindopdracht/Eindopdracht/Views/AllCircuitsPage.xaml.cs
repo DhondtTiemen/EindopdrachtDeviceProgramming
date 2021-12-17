@@ -27,5 +27,15 @@ namespace Eindopdracht.Views
             RootObject circuits = await FormulaRepository.GetCircuitsAsync();
             lvwCircuits.ItemsSource = circuits.MRData.CircuitTable.Circuits;
         }
+
+        private void lvwCircuits_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            Circuit circuit = lvwCircuits.SelectedItem as Circuit;
+
+            if (circuit != null)
+            {
+                Navigation.PushAsync(new CircuitDetail(circuit));
+            }
+        }
     }
 }

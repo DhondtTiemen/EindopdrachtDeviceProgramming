@@ -19,3 +19,4 @@ C:\Users\Tiemen\Desktop\Device Programming\EindopdrachtDeviceProgramming\Eindopd
 C:\Users\Tiemen\Desktop\Device Programming\EindopdrachtDeviceProgramming\Eindopdracht\Eindopdracht\obj\Debug\netstandard2.0\Views\AllSeasonsPage.xaml.g.cs
 C:\Users\Tiemen\Desktop\Device Programming\EindopdrachtDeviceProgramming\Eindopdracht\Eindopdracht\obj\Debug\netstandard2.0\Views\SeasonsPage.xaml.g.cs
 C:\Users\Tiemen\Desktop\Device Programming\EindopdrachtDeviceProgramming\Eindopdracht\Eindopdracht\obj\Debug\netstandard2.0\Eindopdracht.csproj.AssemblyReference.cache
+C:\Users\Tiemen\Desktop\Device Programming\EindopdrachtDeviceProgramming\Eindopdracht\Eindopdracht\obj\Debug\netstandard2.0\Views\CircuitDetail.xaml.g.cs

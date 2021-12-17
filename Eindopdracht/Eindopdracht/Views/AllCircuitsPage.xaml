@@ -4,7 +4,7 @@
              x:Class="Eindopdracht.Views.AllCircuitsPage" Title="All Circuits">
     <ContentPage.Content>
         <StackLayout>
-            <ListView x:Name="lvwCircuits" SeparatorColor="White">
+            <ListView x:Name="lvwCircuits" SeparatorColor="White" ItemSelected="lvwCircuits_ItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
