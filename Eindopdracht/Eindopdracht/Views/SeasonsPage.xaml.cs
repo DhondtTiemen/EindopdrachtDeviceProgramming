@@ -1,11 +1,12 @@
-﻿using Eindopdracht.Models;
+﻿using Eindopdracht.Interfaces;
+using Eindopdracht.Models;
 using Eindopdracht.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -34,7 +35,15 @@ namespace Eindopdracht.Views
 
             if (season != null)
             {
-                Navigation.PushAsync(new CircuitPage(season));
+                NetworkAccess current = Connectivity.NetworkAccess;
+                if (current == NetworkAccess.Internet)
+                {
+                    Navigation.PushAsync(new CircuitPage(season));
+                }
+                else
+                {
+                    DependencyService.Get<IToast>().ToastPopUp("There is no internet connection");
+                }
             }
         }
     }

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -39,7 +39,15 @@ namespace Eindopdracht.Views
 
             if (race != null)
             {
-                Navigation.PushAsync(new ResultPage(seizoenJaar, race));
+                NetworkAccess current = Connectivity.NetworkAccess;
+                if (current == NetworkAccess.Internet)
+                {
+                    Navigation.PushAsync(new ResultPage(seizoenJaar, race));
+                }
+                else
+                {
+                    Navigation.PushAsync(new NoInternetPage());
+                }
             }
         }
     }

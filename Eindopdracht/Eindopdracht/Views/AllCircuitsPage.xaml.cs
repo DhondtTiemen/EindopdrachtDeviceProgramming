@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -39,7 +39,15 @@ namespace Eindopdracht.Views
 
             if (circuit != null)
             {
-                Navigation.PushAsync(new CircuitDetail(circuit));
+                NetworkAccess current = Connectivity.NetworkAccess;
+                if (current == NetworkAccess.Internet)
+                {
+                    Navigation.PushAsync(new CircuitDetail(circuit));
+                }
+                else
+                {
+                    Navigation.PushAsync(new NoInternetPage());
+                }
             }
         }
     }

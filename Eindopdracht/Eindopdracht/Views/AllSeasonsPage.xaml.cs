@@ -6,7 +6,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -39,11 +39,27 @@ namespace Eindopdracht.Views
 
                 if (gekozenJaartal >= 2005)
                 {
-                    Navigation.PushAsync(new CircuitPage(season));
+                    NetworkAccess current = Connectivity.NetworkAccess;
+                    if (current == NetworkAccess.Internet)
+                    {
+                        Navigation.PushAsync(new CircuitPage(season));
+                    }
+                    else
+                    {
+                        Navigation.PushAsync(new NoInternetPage());
+                    }
                 }
                 else
                 {
-                    Navigation.PushAsync(new CircuitPageWithoutTime(season));
+                    NetworkAccess current = Connectivity.NetworkAccess;
+                    if (current == NetworkAccess.Internet)
+                    {
+                        Navigation.PushAsync(new CircuitPageWithoutTime(season));
+                    }
+                    else
+                    {
+                        Navigation.PushAsync(new NoInternetPage());
+                    }
                 }
             }
         }
