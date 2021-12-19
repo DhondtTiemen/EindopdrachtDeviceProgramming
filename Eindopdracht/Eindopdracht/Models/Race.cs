@@ -22,12 +22,11 @@ namespace Eindopdracht.Models
             {
                 time = this.time;
                 string timeZString = time.Substring(0, 8);
-                //DateTime timetime = DateTime.Parse(timeZString).ToUniversalTime();
-                //DateTime timeztime = Convert.ToDateTime(timetime).ToUniversalTime();
-                //DateTime localtime = Convert.ToDateTime(timetime).ToLocalTime();
-                //string localtimestring = localTime.Substring(0, 8);
-                //string timestring = Convert.ToString(localtimestring);
-                return timeZString;
+                DateTime datetimeTimeZ = Convert.ToDateTime(timeZString);
+                DateTime datetimeLocal = datetimeTimeZ.ToUniversalTime();
+                string localString = Convert.ToString(datetimeLocal);
+                string timeResult = localString.Substring(0, 8);
+                return timeResult;
             }
         }
 
