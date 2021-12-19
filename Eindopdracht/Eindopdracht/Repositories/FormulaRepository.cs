@@ -10,7 +10,7 @@ namespace Eindopdracht.Repositories
 {
     public class FormulaRepository
     {
-        private const string _URL = "http://ergast.com/api/f1";
+        private const string _URL = "https://ergast.com/api/f1";
 
         private static HttpClient GetClient()
         {
@@ -22,28 +22,21 @@ namespace Eindopdracht.Repositories
         //Seizoenen ophalen
         public static async Task<RootObject> GetSeasonsAsync()
         {
-            try
+            using (HttpClient client = GetClient())
             {
-                using (HttpClient client = GetClient())
-                {
-                    //URL toevoegen
-                    string url = $"{_URL}/seasons.json?limit=100";
+                //URL toevoegen
+                string url = $"{_URL}/seasons.json?limit=100";
 
-                    //API opvragen en resultaten bijhouden in JSON
-                    string json = await client.GetStringAsync(url);
-                    if (json != null)
-                    {
-                        return JsonConvert.DeserializeObject<RootObject>(json);
-                    }
-                    else
-                    {
-                        return null;
-                    }
+                //API opvragen en resultaten bijhouden in JSON
+                string json = await client.GetStringAsync(url);
+                if (json != null)
+                {
+                    return JsonConvert.DeserializeObject<RootObject>(json);
                 }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
+                else
+                {
+                    return null;
+                }
             }
         }
 
@@ -123,27 +116,107 @@ namespace Eindopdracht.Repositories
             }
         }
 
+        //Favoriete circuits ophalen
+        public static async Task<List<RootObject>> GetFavoriteCircuitsAsync()
+        {
+            FavoriteCircuit fav = new FavoriteCircuit();
+
+            using (HttpClient client = GetClient())
+            {
+
+                //URL toevoegen
+                string url = $"https://favoritesapi.azurewebsites.net/api/favorites/circuits";
+
+                //API opvragen en resultaten bijhouden in JSON
+                string json = await client.GetStringAsync(url);
+                json = json.Insert(0, "{'favorites':");
+                json = json.Insert(json.Length, "}");
+
+
+                if (json != null)
+                {
+                    fav = JsonConvert.DeserializeObject<FavoriteCircuit>(json);
+                }
+
+                List<RootObject> lijst = new List<RootObject>();
+
+                foreach (var item in fav.favorites)
+                {
+                    url = $"{_URL}/circuits/{item.circuitId}.json";
+
+                    //API opvragen en resultaten bijhouden in JSON
+                    json = await client.GetStringAsync(url);
+                    if (json != null)
+                    {
+                        lijst.Add(JsonConvert.DeserializeObject<RootObject>(json));
+                    }
+                }
+
+                return lijst;
+            }
+        }
+
+        public static async Task<string> IsFavorite(string circuit)
+        {
+            using (HttpClient client = GetClient())
+            {
+                string url = $"https://favoritesapi.azurewebsites.net/api/favorites/{circuit}";
+
+                return await client.GetStringAsync(url);
+            }
+        }
+
+
         //Circuit toevoegen aan favorieten
-        //public static async Task<Circuit> AddFavoriteCircuitAsync(string circuitId)
-        //{
-        //    using (HttpClient client = GetClient())
-        //    {
-        //        //URL opvragen
-        //        string url = $"http://localhost:7071/api/favorites/circuits/{circuitId}";
+        public async static Task AddFavoriteCircuit(string id)
+        {
+            try
+            {
+                using (HttpClient client = GetClient())
+                {
+                    string url = $"https://favoritesapi.azurewebsites.net/api/favorites/circuits/{id}";
 
-        //        string json = JsonConvert.SerializeObject(circuitId);
+                    HttpContent content = new StringContent("", Encoding.UTF8, "application/json");
 
-        //        HttpContent content = new StringContent(json, Encoding.UTF8, "application/json");
-        //        var response = await client.PutAsync(url, content);
+                    var response = await client.PostAsync(url, content); ;
+                    if (!response.IsSuccessStatusCode)
+                    {
+                        throw new Exception("Tis nie gulukt, programeer wa beter e de volgende keer");
+                    }
+                }
+            }
+            catch (Exception)
+            {
 
-        //        if (!response.IsSuccessStatusCode)
-        //        {
-        //            throw new Exception("Something went wrong...");
-        //        }
+                throw;
+            }
+        }
 
-        //        return "";
-        //    }
-        //}
+        //Circuit verwijderen aan favorieten
+
+        public async static Task DeleteFavoriteCircuit(string id)
+        {
+            try
+            {
+                using (HttpClient client = GetClient())
+                {
+                    string url = $"https://favoritesapi.azurewebsites.net/api/favorites/circuits/{id}";
+
+                    var response = await client.DeleteAsync(url); ;
+                    if (!response.IsSuccessStatusCode)
+                    {
+                        throw new Exception("Tis nie gulukt, programeer wa beter e de volgende keer");
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+
 
         //Drivers ophalen
         public static async Task<RootObject> GetDriversAsync()
@@ -167,7 +240,11 @@ namespace Eindopdracht.Repositories
             }
         }
 
-        //Drivers toevoegen aan favorieten
+        //Favoriete Drivers ophalen
+
+        //Driver toevoegen aan favorieten
+
+        //Driver verwijderen aan favorieten
 
     }
 }

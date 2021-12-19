@@ -11,11 +11,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Assets\arrow.svg" />
+    <None Remove="Assets\FavoritesEmpty.png" />
+    <None Remove="Assets\FavoritesFull.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Assets\arrow.svg" />
+    <EmbeddedResource Include="Assets\FavoritesEmpty.png" />
+    <EmbeddedResource Include="Assets\FavoritesFull.png" />
   </ItemGroup>
 
   <ItemGroup>

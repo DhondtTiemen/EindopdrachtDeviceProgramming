@@ -25,7 +25,22 @@ namespace Eindopdracht.Views
         {
             //Drivers verkrijgen
             RootObject drivers = await FormulaRepository.GetDriversAsync();
-            lvwCircuits.ItemsSource = drivers.MRData.DriverTable.Drivers;
+            lvwDrivers.ItemsSource = drivers.MRData.DriverTable.Drivers;
+
+            //Favoriete Circuits opvragen
+            List<RootObject> favoritesCircuits = await FormulaRepository.GetFavoriteCircuitsAsync();
+            lvwFavoriteDrivers.ItemsSource = favoritesCircuits;
+            lvwFavoriteDrivers.HeightRequest = 50 * favoritesCircuits.Count;
+        }
+
+        private void lvwDrivers_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            Driver driver = lvwDrivers.SelectedItem as Driver;
+
+            if (driver != null)
+            {
+                Navigation.PushAsync(new DriverDetail(driver));
+            }
         }
     }
 }

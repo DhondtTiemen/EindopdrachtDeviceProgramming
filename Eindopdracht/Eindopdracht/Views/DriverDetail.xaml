@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Eindopdracht.Views.DriverDetail" Title="Driver">
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="imgFavorite" Clicked="imgFavorite_Clicked"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="{Binding driverFamilyName}"></Label>
+            <Button Text="Add to favorites" Clicked="Button_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

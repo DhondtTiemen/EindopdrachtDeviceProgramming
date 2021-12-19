@@ -2,6 +2,7 @@
 using Eindopdracht.Repositories;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,7 +22,7 @@ namespace Eindopdracht.Views
             ShowSeasons();
         }
 
-        private async Task ShowSeasons()
+        private async void ShowSeasons()
         {
             //Seizoenen verkrijgen
             RootObject seizoenen = await FormulaRepository.GetSeasonsAsync();

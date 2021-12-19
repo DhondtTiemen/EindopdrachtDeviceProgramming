@@ -21,11 +21,16 @@ namespace Eindopdracht.Views
             showCircuits();
         }
 
-        private async Task showCircuits()
+        private async void showCircuits()
         {
             //Circuits opvragen
             RootObject circuits = await FormulaRepository.GetCircuitsAsync();
             lvwCircuits.ItemsSource = circuits.MRData.CircuitTable.Circuits;
+
+            //Favoriete Circuits opvragen
+            List<RootObject> favoritesCircuits = await FormulaRepository.GetFavoriteCircuitsAsync();
+            lvwFavoritesCircuits.ItemsSource = favoritesCircuits;
+            lvwFavoritesCircuits.HeightRequest = 50 * favoritesCircuits.Count;
         }
 
         private void lvwCircuits_ItemSelected(object sender, SelectedItemChangedEventArgs e)

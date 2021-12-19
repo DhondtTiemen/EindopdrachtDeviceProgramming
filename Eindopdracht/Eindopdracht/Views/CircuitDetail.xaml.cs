@@ -15,6 +15,7 @@ namespace Eindopdracht.Views
     public partial class CircuitDetail : ContentPage
     {
         public Circuit circuitGekozen { get; set; }
+        public bool isFavorite = false;
         public CircuitDetail(Circuit circuit)
         {
             InitializeComponent();
@@ -22,18 +23,50 @@ namespace Eindopdracht.Views
             //Circuit opslaan in object
             circuitGekozen = circuit;
 
+            
+
+            
+
             //CircuitInfo weergeven
             showCircuit();
         }
 
-        private void showCircuit()
+        private async void showCircuit()
         {
+            string isFav = await FormulaRepository.IsFavorite(circuitGekozen.circuitId);
+
+            if (isFav == "true")
+            {
+                imgFavorite.IconImageSource = ImageSource.FromResource("Eindopdracht.Assets.FavoritesFull.png");
+                isFavorite = true;
+            }
+            else
+            {
+                imgFavorite.IconImageSource = ImageSource.FromResource("Eindopdracht.Assets.FavoritesEmpty.png");
+                isFavorite = false;
+            }
         }
 
         private void Button_Clicked(object sender, EventArgs e)
         {
             //Circuit toevoegen aan favorieten
-            //Circuit circuit = await FormulaRepository.AddFavoriteCircuitAsync(circuitGekozen.circuitId);
+            //FavoriteCircuit favoriteCircuit = await FormulaRepository.AddFavoriteCircuitAsync(circuitGekozen.circuitId);
+        }
+
+        private async void imgFavorite_Clicked(object sender, EventArgs e)
+        {
+            if (isFavorite)
+            {
+                isFavorite = false;
+                imgFavorite.IconImageSource = ImageSource.FromResource("Eindopdracht.Assets.FavoritesEmpty.png");
+                await FormulaRepository.DeleteFavoriteCircuit(circuitGekozen.circuitId);
+            }
+            else
+            {
+                isFavorite = true;
+                imgFavorite.IconImageSource = ImageSource.FromResource("Eindopdracht.Assets.FavoritesFull.png");
+                await FormulaRepository.AddFavoriteCircuit(circuitGekozen.circuitId);
+            }
         }
     }
 }

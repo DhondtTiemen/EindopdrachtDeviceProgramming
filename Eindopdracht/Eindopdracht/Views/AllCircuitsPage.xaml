@@ -4,6 +4,25 @@
              x:Class="Eindopdracht.Views.AllCircuitsPage" Title="All Circuits">
     <ContentPage.Content>
         <StackLayout>
+            <Label Text="Favorite circuits:" TextColor="Gray"/>
+            <ListView x:Name="lvwFavoritesCircuits" SeparatorColor="White">²
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="16"/>
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="1" Text="{Binding MRData.CircuitTable.Circuits[0].circuitName}" TextColor="Red" FontSize="16" HorizontalOptions="Start" VerticalOptions="Center"/>
+                                <Label Grid.Column="2" Text="{Binding MRData.CircuitTable.Circuits[0].Location.country}" TextColor="Gray" FontSize="16" HorizontalOptions="End" VerticalOptions="Center" Padding="0, 0, 16, 0"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Label Text="All circuits:" TextColor="Gray"/>
             <ListView x:Name="lvwCircuits" SeparatorColor="White" ItemSelected="lvwCircuits_ItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
