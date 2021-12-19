@@ -23,9 +23,9 @@ namespace Eindopdracht.Models
                 time = this.time;
                 string timeZString = time.Substring(0, 8);
                 DateTime datetimeTimeZ = Convert.ToDateTime(timeZString);
-                DateTime datetimeLocal = datetimeTimeZ.ToUniversalTime();
+                DateTime datetimeLocal = datetimeTimeZ.AddHours(+2);
                 string localString = Convert.ToString(datetimeLocal);
-                string timeResult = localString.Substring(12, 8);
+                string timeResult = localString.Substring(10, 11);
                 return timeResult;
             }
         }
