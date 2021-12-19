@@ -1,4 +1,5 @@
-﻿using Eindopdracht.Models;
+﻿using Eindopdracht.Interfaces;
+using Eindopdracht.Models;
 using Eindopdracht.Repositories;
 using System;
 using System.Collections.Generic;
@@ -22,10 +23,6 @@ namespace Eindopdracht.Views
 
             //Circuit opslaan in object
             circuitGekozen = circuit;
-
-            
-
-            
 
             //CircuitInfo weergeven
             showCircuit();
@@ -59,12 +56,14 @@ namespace Eindopdracht.Views
             {
                 isFavorite = false;
                 imgFavorite.IconImageSource = ImageSource.FromResource("Eindopdracht.Assets.FavoritesEmpty.png");
+                DependencyService.Get<IToast>().ToastPopUp($"{circuitGekozen.circuitName} has been deleted from favorites");
                 await FormulaRepository.DeleteFavoriteCircuit(circuitGekozen.circuitId);
             }
             else
             {
                 isFavorite = true;
                 imgFavorite.IconImageSource = ImageSource.FromResource("Eindopdracht.Assets.FavoritesFull.png");
+                DependencyService.Get<IToast>().ToastPopUp($"{circuitGekozen.circuitName} has been added favorites");
                 await FormulaRepository.AddFavoriteCircuit(circuitGekozen.circuitId);
             }
         }

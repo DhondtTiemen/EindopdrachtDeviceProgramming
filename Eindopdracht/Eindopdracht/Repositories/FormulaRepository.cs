@@ -241,10 +241,102 @@ namespace Eindopdracht.Repositories
         }
 
         //Favoriete Drivers ophalen
+        public static async Task<List<RootObject>> GetFavoriteDrivers()
+        {
+            FavoriteDriver fav = new FavoriteDriver();
+
+            using (HttpClient client = GetClient())
+            {
+
+                //URL toevoegen
+                string url = $"https://favoritesapi.azurewebsites.net/api/favorites/drivers";
+
+                //API opvragen en resultaten bijhouden in JSON
+                string json = await client.GetStringAsync(url);
+                json = json.Insert(0, "{'favorites':");
+                json = json.Insert(json.Length, "}");
+
+
+                if (json != null)
+                {
+                    fav = JsonConvert.DeserializeObject<FavoriteDriver>(json);
+                }
+
+                List<RootObject> lijst = new List<RootObject>();
+
+                foreach (var item in fav.favorites)
+                {
+                    url = $"{_URL}/drivers/{item.driverId}.json";
+
+                    //API opvragen en resultaten bijhouden in JSON
+                    json = await client.GetStringAsync(url);
+                    if (json != null)
+                    {
+                        lijst.Add(JsonConvert.DeserializeObject<RootObject>(json));
+                    }
+                }
+
+                return lijst;
+            }
+        }
+
+        public static async Task<string> IsFavoriteDriver(string driver)
+        {
+            using (HttpClient client = GetClient())
+            {
+                string url = $"https://favoritesapi.azurewebsites.net/api/favorites/drivers/{driver}";
+
+                return await client.GetStringAsync(url);
+            }
+        }
+
 
         //Driver toevoegen aan favorieten
+        public async static Task AddFavoriteDriver(string id)
+        {
+            try
+            {
+                using (HttpClient client = GetClient())
+                {
+                    string url = $"https://favoritesapi.azurewebsites.net/api/favorites/drivers/{id}";
+
+                    HttpContent content = new StringContent("", Encoding.UTF8, "application/json");
+
+                    var response = await client.PostAsync(url, content); ;
+                    if (!response.IsSuccessStatusCode)
+                    {
+                        throw new Exception("Tis nie gulukt, programeer wa beter e de volgende keer");
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
 
         //Driver verwijderen aan favorieten
+        public async static Task DeleteFavoriteDriver(string id)
+        {
+            try
+            {
+                using (HttpClient client = GetClient())
+                {
+                    string url = $"https://favoritesapi.azurewebsites.net/api/favorites/drivers/{id}";
 
+                    var response = await client.DeleteAsync(url); ;
+                    if (!response.IsSuccessStatusCode)
+                    {
+                        throw new Exception("Tis nie gulukt, programeer wa beter e de volgende keer");
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }

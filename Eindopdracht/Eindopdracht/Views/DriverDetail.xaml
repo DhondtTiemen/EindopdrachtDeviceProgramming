@@ -10,7 +10,7 @@
     <ContentPage.Content>
         <StackLayout>
             <Label Text="{Binding driverFamilyName}"></Label>
-            <Button Text="Add to favorites" Clicked="Button_Clicked"/>
+            <Button Text="Add to favorites"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

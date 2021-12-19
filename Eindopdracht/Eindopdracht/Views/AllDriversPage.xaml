@@ -14,8 +14,8 @@
                                     <ColumnDefinition Width="16"/>
                                     <ColumnDefinition />
                                 </Grid.ColumnDefinitions>
-                                <Label Grid.Column="1" Text="{}" TextColor="Red" FontSize="16" HorizontalOptions="Start" VerticalOptions="Center"/>
-                                <Label Grid.Column="2" Text="{}" TextColor="Gray" FontSize="16" HorizontalOptions="End" VerticalOptions="Center" Padding="0, 0, 16, 0"/>
+                                <Label Grid.Column="1" Text="{Binding MRData.DriverTable.Drivers[0].familyName}" TextColor="Red" FontSize="16" HorizontalOptions="Start" VerticalOptions="Center"/>
+                                <Label Grid.Column="2" Text="{Binding MRData.DriverTable.Drivers[0].familyName.nationality}" TextColor="Gray" FontSize="16" HorizontalOptions="End" VerticalOptions="Center" Padding="0, 0, 16, 0"/>
                             </Grid>
                         </ViewCell>
                     </DataTemplate>

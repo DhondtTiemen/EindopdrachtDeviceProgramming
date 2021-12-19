@@ -1,4 +1,6 @@
-﻿using Eindopdracht.Models;
+﻿using Eindopdracht.Interfaces;
+using Eindopdracht.Models;
+using Eindopdracht.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,9 +15,9 @@ namespace Eindopdracht.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class DriverDetail : ContentPage
     {
-        public Driver driverGekozen { get; set; }
+        public Drivers driverGekozen { get; set; }
         public bool isFavorite = false;
-        public DriverDetail(Driver driver)
+        public DriverDetail(Drivers driver)
         {
             InitializeComponent();
 
@@ -26,14 +28,40 @@ namespace Eindopdracht.Views
             showDriver();
         }
 
-        private void showDriver()
+        private async void showDriver()
         {
-            throw new NotImplementedException();
+            string isFav = await FormulaRepository.IsFavoriteDriver(driverGekozen.driverId);
+
+            if (isFav == "true")
+            {
+                imgFavorite.IconImageSource = ImageSource.FromResource("Eindopdracht.Assets.FavoritesFull.png");
+                isFavorite = true;
+                
+            }
+            else
+            {
+                imgFavorite.IconImageSource = ImageSource.FromResource("Eindopdracht.Assets.FavoritesEmpty.png");
+                isFavorite = false;
+                
+            }
         }
 
-        private void imgFavorite_Clicked(object sender, EventArgs e)
+        private async void imgFavorite_Clicked(object sender, EventArgs e)
         {
-
+            if (isFavorite)
+            {
+                isFavorite = false;
+                imgFavorite.IconImageSource = ImageSource.FromResource("Eindopdracht.Assets.FavoritesEmpty.png");
+                DependencyService.Get<IToast>().ToastPopUp($"{driverGekozen.givenName} has been deleted from favorites");
+                await FormulaRepository.DeleteFavoriteDriver(driverGekozen.driverId);
+            }
+            else
+            {
+                isFavorite = true;
+                imgFavorite.IconImageSource = ImageSource.FromResource("Eindopdracht.Assets.FavoritesFull.png");
+                DependencyService.Get<IToast>().ToastPopUp($"{driverGekozen.givenName} has been added favorites");
+                await FormulaRepository.AddFavoriteDriver(driverGekozen.driverId);
+            }
         }
     }
 }

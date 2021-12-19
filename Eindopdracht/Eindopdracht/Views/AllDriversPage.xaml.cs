@@ -21,21 +21,23 @@ namespace Eindopdracht.Views
             showDrivers();
         }
 
-        private async Task showDrivers()
+        private async void showDrivers()
         {
             //Drivers verkrijgen
             RootObject drivers = await FormulaRepository.GetDriversAsync();
             lvwDrivers.ItemsSource = drivers.MRData.DriverTable.Drivers;
 
             //Favoriete Circuits opvragen
-            List<RootObject> favoritesCircuits = await FormulaRepository.GetFavoriteCircuitsAsync();
+            List<RootObject> favoritesCircuits = await FormulaRepository.GetFavoriteDrivers();
             lvwFavoriteDrivers.ItemsSource = favoritesCircuits;
             lvwFavoriteDrivers.HeightRequest = 50 * favoritesCircuits.Count;
         }
 
         private void lvwDrivers_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            Driver driver = lvwDrivers.SelectedItem as Driver;
+            Drivers driver = lvwDrivers.SelectedItem as Drivers;
+
+            var test = lvwDrivers.SelectedItem.GetType();
 
             if (driver != null)
             {
