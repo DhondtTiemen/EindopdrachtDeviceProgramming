@@ -32,7 +32,7 @@ namespace Eindopdracht.Views
         {
             //Resultaten opvragen
             RootObject resultaat = await FormulaRepository.GetResultsByRoundBySeason(seizoensJaar.season, seizoensRonde.round);
-            lvwResults.ItemsSource = resultaat.MRData.RaceTable.Races[Convert.ToInt32(seizoensRonde.round) -1].Results;      
+            lvwResults.ItemsSource = resultaat.MRData.RaceTable.Races[Convert.ToInt32(seizoensRonde.round) -1].Results;
         }
     }
 }

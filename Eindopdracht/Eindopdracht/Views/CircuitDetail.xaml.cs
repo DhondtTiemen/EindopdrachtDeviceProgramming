@@ -1,4 +1,5 @@
 ﻿using Eindopdracht.Models;
+using Eindopdracht.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,7 +32,8 @@ namespace Eindopdracht.Views
 
         private void Button_Clicked(object sender, EventArgs e)
         {
-
+            //Circuit toevoegen aan favorieten
+            //Circuit circuit = await FormulaRepository.AddFavoriteCircuitAsync(circuitGekozen.circuitId);
         }
     }
 }

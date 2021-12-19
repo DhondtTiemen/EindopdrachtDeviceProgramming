@@ -23,7 +23,7 @@ namespace Eindopdracht.Views
 
         private async Task showCircuits()
         {
-            //Circuits verkrijgen
+            //Circuits opvragen
             RootObject circuits = await FormulaRepository.GetCircuitsAsync();
             lvwCircuits.ItemsSource = circuits.MRData.CircuitTable.Circuits;
         }

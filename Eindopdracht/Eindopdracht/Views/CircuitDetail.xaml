@@ -4,6 +4,7 @@
              x:Class="Eindopdracht.Views.CircuitDetail" Title="Circuit">
     <ContentPage.Content>
         <StackLayout>
+            <Label Text="{Binding circuitName}"></Label>
             <Button Text="Add to favorites" Clicked="Button_Clicked"/>
         </StackLayout>
     </ContentPage.Content>

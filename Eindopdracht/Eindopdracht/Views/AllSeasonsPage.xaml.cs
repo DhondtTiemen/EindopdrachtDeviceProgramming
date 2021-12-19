@@ -34,7 +34,16 @@ namespace Eindopdracht.Views
 
             if (season != null)
             {
-                Navigation.PushAsync(new CircuitPage(season));
+                int gekozenJaartal = Convert.ToInt32(season.season);
+
+                if (gekozenJaartal >= 2005)
+                {
+                    Navigation.PushAsync(new CircuitPage(season));
+                }
+                else
+                {
+                    Navigation.PushAsync(new CircuitPageWithoutTime(season));
+                }
             }
         }
     }

@@ -123,6 +123,28 @@ namespace Eindopdracht.Repositories
             }
         }
 
+        //Circuit toevoegen aan favorieten
+        //public static async Task<Circuit> AddFavoriteCircuitAsync(string circuitId)
+        //{
+        //    using (HttpClient client = GetClient())
+        //    {
+        //        //URL opvragen
+        //        string url = $"http://localhost:7071/api/favorites/circuits/{circuitId}";
+
+        //        string json = JsonConvert.SerializeObject(circuitId);
+
+        //        HttpContent content = new StringContent(json, Encoding.UTF8, "application/json");
+        //        var response = await client.PutAsync(url, content);
+
+        //        if (!response.IsSuccessStatusCode)
+        //        {
+        //            throw new Exception("Something went wrong...");
+        //        }
+
+        //        return "";
+        //    }
+        //}
+
         //Drivers ophalen
         public static async Task<RootObject> GetDriversAsync()
         {
@@ -144,5 +166,8 @@ namespace Eindopdracht.Repositories
                 }
             }
         }
+
+        //Drivers toevoegen aan favorieten
+
     }
 }

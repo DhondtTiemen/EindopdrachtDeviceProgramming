@@ -11,7 +11,7 @@ namespace Eindopdracht.Models
 
         public override string ToString()
         {
-            return this.season;
+            return Convert.ToString(this.season);
         }
     }
 }
