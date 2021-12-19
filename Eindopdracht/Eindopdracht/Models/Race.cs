@@ -25,7 +25,7 @@ namespace Eindopdracht.Models
                 DateTime datetimeTimeZ = Convert.ToDateTime(timeZString);
                 DateTime datetimeLocal = datetimeTimeZ.ToUniversalTime();
                 string localString = Convert.ToString(datetimeLocal);
-                string timeResult = localString.Substring(0, 8);
+                string timeResult = localString.Substring(12, 8);
                 return timeResult;
             }
         }
